@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدينة الكلمات السحرية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- شاشة البداية -->
+        <div id="start-screen" class="screen active">
+            <div class="welcome-content">
+                <h1 class="game-title">🏰 مدينة الكلمات السحرية 🏰</h1>
+                <p class="game-subtitle">تعلم قواعد اللغة العربية بطريقة ممتعة!</p>
+                <div class="character-intro">
+                    <div class="character">🧙‍♂️</div>
+                    <p>مرحباً! أنا الأستاذ حكيم، مرشدك في رحلة تعلم اللغة العربية</p>
+                </div>
+                <button id="start-btn" class="btn btn-primary">ابدأ المغامرة</button>
+            </div>
+        </div>
+
+        <!-- شاشة اللعبة الرئيسية -->
+        <div id="game-screen" class="screen">
+            <!-- شريط المعلومات العلوي -->
+            <div class="top-bar">
+                <div class="player-info">
+                    <span class="stars">⭐ <span id="star-count">0</span></span>
+                    <span class="level">المستوى: <span id="level">1</span></span>
+                </div>
+                <div class="game-title-small">مدينة الكلمات السحرية</div>
+            </div>
+
+            <!-- منطقة المدينة -->
+            <div class="city-area">
+                <div class="buildings-container">
+                    <!-- بيت الحروف -->
+                    <div class="building" id="letters-house" data-building="letters">
+                        <div class="building-icon">🏠</div>
+                        <div class="building-name">بيت الحروف</div>
+                        <div class="building-status unlocked">متاح</div>
+                    </div>
+
+                    <!-- حي الأسماء -->
+                    <div class="building" id="nouns-district" data-building="nouns">
+                        <div class="building-icon">🏘️</div>
+                        <div class="building-name">حي الأسماء</div>
+                        <div class="building-status locked">مغلق</div>
+                    </div>
+
+                    <!-- ساحة الأفعال -->
+                    <div class="building" id="verbs-square" data-building="verbs">
+                        <div class="building-icon">🏛️</div>
+                        <div class="building-name">ساحة الأفعال</div>
+                        <div class="building-status locked">مغلق</div>
+                    </div>
+
+                    <!-- حديقة الجمل -->
+                    <div class="building" id="sentences-garden" data-building="sentences">
+                        <div class="building-icon">🌳</div>
+                        <div class="building-name">حديقة الجمل</div>
+                        <div class="building-status locked">مغلق</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منطقة المرشد -->
+            <div class="guide-area">
+                <div class="guide-character">🧙‍♂️</div>
+                <div class="guide-speech">
+                    <p id="guide-text">اختر بيت الحروف لتبدأ رحلتك في تعلم اللغة العربية!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- شاشة التحديات -->
+        <div id="challenge-screen" class="screen">
+            <div class="challenge-header">
+                <button id="back-btn" class="btn btn-secondary">← العودة</button>
+                <h2 id="challenge-title">تحدي الحروف</h2>
+                <div class="challenge-progress">
+                    <span id="challenge-score">النقاط: 0</span>
+                </div>
+            </div>
+
+            <div class="challenge-content">
+                <div id="challenge-area">
+                    <!-- محتوى التحدي سيتم إدراجه هنا بواسطة JavaScript -->
+                </div>
+                
+                <div class="challenge-controls">
+                    <button id="check-answer" class="btn btn-primary">تحقق من الإجابة</button>
+                    <button id="next-challenge" class="btn btn-success" style="display: none;">التحدي التالي</button>
+                </div>
+            </div>
+
+            <!-- منطقة التغذية الراجعة -->
+            <div id="feedback-area" class="feedback-area">
+                <div id="feedback-message"></div>
+            </div>
+        </div>
+
+        <!-- شاشة النجاح -->
+        <div id="success-screen" class="screen">
+            <div class="success-content">
+                <h2>🎉 أحسنت! 🎉</h2>
+                <p id="success-message">لقد أكملت التحدي بنجاح!</p>
+                <div class="rewards">
+                    <div class="reward-item">
+                        <span class="reward-icon">⭐</span>
+                        <span class="reward-text">حصلت على <span id="earned-stars">5</span> نجوم</span>
+                    </div>
+                </div>
+                <button id="continue-btn" class="btn btn-primary">متابعة</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
